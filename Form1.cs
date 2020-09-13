@@ -72,7 +72,7 @@ namespace CraftopiaWorldTransferApp
                 CheckFileExists = true,
                 CheckPathExists = true,
                 DefaultExt = "ocs",
-                Filter = "json files (*.json)|*.json|ocs files (*.ocs)|*.ocs",
+                Filter = "(*.json, *.ocs)|*.json;*.ocs",
                 FilterIndex = 2,
                 RestoreDirectory = true,
                 ReadOnlyChecked = true,
