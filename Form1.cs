@@ -179,7 +179,7 @@ namespace CraftopiaWorldTransferApp
                     Directory.CreateDirectory(Directory.GetCurrentDirectory() + "/world");
                     File.WriteAllText($"{Directory.GetCurrentDirectory()}/world/{srcList.SelectedItem.ToString() + ".json"}", sourceWorld.ToString());
                     MessageBox.Show("World has been successfully exported to:\n" +
-                        $"({Directory.GetCurrentDirectory()}+/world/{srcList.SelectedItem.ToString() + ".json"}).", "Success",
+                        $"({Directory.GetCurrentDirectory()}/world/{srcList.SelectedItem.ToString() + ".json"}).", "Success",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
