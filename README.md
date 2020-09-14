@@ -2,6 +2,8 @@
 
 Simple WinForm application to transfer a Craftopia world from one saved file to another, as well as export a world as a .json file to import to another saved file.
 
+**Requires .Net Core 3.0 to run**
+
 ## Instructions
 
 **NOTE:** `SaveData.ocs` file is typically found in `<LetterDrive>:\Users\<Computer Username Here>\AppData\LocalLow\PocketPair\Craftopia\Save`
