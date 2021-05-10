@@ -177,10 +177,20 @@ namespace CraftopiaWorldTransferApp
                 {
                     JToken sourceWorld = srcSavedData["WorldListSave"]["value"][srcList.SelectedIndex];
                     Directory.CreateDirectory(Directory.GetCurrentDirectory() + "/world");
-                    File.WriteAllText($"{Directory.GetCurrentDirectory()}/world/{srcList.SelectedItem.ToString() + ".json"}", sourceWorld.ToString());
-                    MessageBox.Show("World has been successfully exported to:\n" +
-                        $"({Directory.GetCurrentDirectory()}/world/{srcList.SelectedItem.ToString() + ".json"}).", "Success",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    try
+                    {
+                        File.WriteAllText($"{Directory.GetCurrentDirectory()}/world/{srcList.SelectedItem.ToString() + ".json"}", sourceWorld.ToString(), Encoding.Unicode);
+                        MessageBox.Show("World has been successfully exported to:\n" +
+                            $"({Directory.GetCurrentDirectory()}/world/{srcList.SelectedItem.ToString() + ".json"}).", "Success",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception)
+                    {
+                        File.WriteAllText($"{Directory.GetCurrentDirectory()}/world/unicode_world.json", sourceWorld.ToString(), Encoding.Unicode);
+                        MessageBox.Show("World has been successfully exported to:\n" +
+                            $"({Directory.GetCurrentDirectory()}/world/unicode_world.json).", "Success",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
                 else
                 {
